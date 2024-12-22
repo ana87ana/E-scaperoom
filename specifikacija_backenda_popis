@@ -1,0 +1,51 @@
+SPECIFIKACIJA BACKENDA
+APLIKACIJA E-SCAPEROOM
+POPIS RUTA
+/login – POST ruta koja služi za ulaženje korisnika u aplikaciju ako korisnik već ima račun
+/signup – POST ruta koja služi za stvaranje računa unutar aplikacije
+/logout – POST ruta koja služi za izlaženje iz računa
+PRIMJER PODATAKA ZA KORISNIKA
+{
+"id": "1",
+"ime": "Ivan",
+"prezime": "Ivic",
+"email": "ivan.ivic@gmail.com",
+"lozinka": "password",
+}
+
+/korisnik/:id/statistika – GET ruta koja pokazuje korisniku koliko je soba odigrao 
+/escape_rooms
+-	GET ruta koja prikazuje sve moguće sobe
+-	POST ruta koja omogućuje dodavanje nove sobe(admin ruta)
+/escape_rooms/:id
+-	GET ruta koja dohvaća specifičnu sobu sa danim id-em
+-	PUT ruta kojom se mijenjaju detalji specifične sobe(admin ruta)
+-	DELETE ruta koja briše sobu(admin ruta)
+
+PRIMJER PODATAKA ZA SOBU
+{
+"id": "1",
+"naziv": "escape room",
+"tema": "fantasy",
+"pitanja": 
+"odgovor 1",
+…
+"ljestvica": 
+"id_korisnika_1",
+…
+"hintovi": 
+"zadatak_1",
+…
+}
+
+/pokusaj/:id_soba/
+-	POST ruta koja započinje pokušaj rješavanja sobe
+-	PATCH ruta koja dodaje vrijeme za koje je korisnik riješio sobu
+/ljestvica/:id_soba – GET ruta koja pokazuje ljestvicu vremena za završiti određenu sobu svih korisnika 
+/hint/:id_soba
+-	GET ruta koja dohvaća hintove(admin ruta)
+-	POST ruta koja dohvaća hint kad ga korisnik zatraži 
+
+
+
+
